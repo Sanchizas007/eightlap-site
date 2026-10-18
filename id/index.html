@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eightlap – rencanakan balapan, kuasai jam</title>
+<meta name="description" content="Perencana balapan dan catatan waktu per bagian untuk lomba kebugaran delapan kilometer dan delapan stasiun.">
+<link rel="alternate" hreflang="en" href="https://sanchizas007.github.io/eightlap-site/"><link rel="alternate" hreflang="de" href="https://sanchizas007.github.io/eightlap-site/de/"><link rel="alternate" hreflang="es" href="https://sanchizas007.github.io/eightlap-site/es/"><link rel="alternate" hreflang="fr" href="https://sanchizas007.github.io/eightlap-site/fr/"><link rel="alternate" hreflang="it" href="https://sanchizas007.github.io/eightlap-site/it/"><link rel="alternate" hreflang="ja" href="https://sanchizas007.github.io/eightlap-site/ja/"><link rel="alternate" hreflang="ko" href="https://sanchizas007.github.io/eightlap-site/ko/"><link rel="alternate" hreflang="nl" href="https://sanchizas007.github.io/eightlap-site/nl/"><link rel="alternate" hreflang="pl" href="https://sanchizas007.github.io/eightlap-site/pl/"><link rel="alternate" hreflang="pt-BR" href="https://sanchizas007.github.io/eightlap-site/pt-BR/"><link rel="alternate" hreflang="ru" href="https://sanchizas007.github.io/eightlap-site/ru/"><link rel="alternate" hreflang="zh-Hans" href="https://sanchizas007.github.io/eightlap-site/zh-Hans/"><link rel="alternate" hreflang="zh-Hant" href="https://sanchizas007.github.io/eightlap-site/zh-Hant/"><link rel="alternate" hreflang="tr" href="https://sanchizas007.github.io/eightlap-site/tr/"><link rel="alternate" hreflang="uk" href="https://sanchizas007.github.io/eightlap-site/uk/"><link rel="alternate" hreflang="ar" href="https://sanchizas007.github.io/eightlap-site/ar/"><link rel="alternate" hreflang="id" href="https://sanchizas007.github.io/eightlap-site/id/"><link rel="alternate" hreflang="th" href="https://sanchizas007.github.io/eightlap-site/th/"><link rel="alternate" hreflang="vi" href="https://sanchizas007.github.io/eightlap-site/vi/"><link rel="alternate" hreflang="sv" href="https://sanchizas007.github.io/eightlap-site/sv/">
+<link rel="icon" href="../icon.png">
+<style>
+:root {
+  --ink: #050507; --surface: #0E0E15; --raised: #161622; --text: #ECECF4; --body: #C9CAD8; --muted: #8B8CA0;
+  --line: #24243A; --violet: #7A42FF; --magenta: #FF3EA5; --orange: #FF9A3C;
+  --neon: linear-gradient(100deg, #7A42FF 0%, #B23CF0 28%, #FF3EA5 52%, #FF5A5F 76%, #FF9A3C 100%);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--ink); color: var(--body);
+  background-image: radial-gradient(900px 520px at 0% 100%, rgba(122,66,255,.22), transparent 70%),
+                    radial-gradient(800px 480px at 100% 0%, rgba(255,154,60,.14), transparent 70%);
+  background-attachment: fixed;
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+header { padding: 20px 0; border-bottom: 1px solid var(--line); }
+header .bar { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+header a { color: var(--muted); text-decoration: none; font-size: 15px; }
+header a:hover, header a[aria-current] { color: #FFFFFF; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 20px; color: #FFFFFF; letter-spacing: .2px; }
+.brand img { width: 30px; height: 30px; border-radius: 8px; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+main { padding: 38px 0 60px; }
+h1 { font-size: 34px; line-height: 1.2; letter-spacing: -.4px; margin: 0 0 8px; color: #fff;
+     background: var(--neon); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+h2 { font-size: 20px; margin: 32px 0 8px; color: var(--text); }
+h3 { font-size: 17px; margin: 22px 0 4px; color: var(--text); }
+p, li { color: var(--body); }
+li { margin: 8px 0; }
+li strong { color: var(--text); }
+.lede { font-size: 19px; color: var(--muted); margin: 0 0 26px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; margin: 18px 0; }
+.stub { background: linear-gradient(180deg, var(--raised), var(--surface)); border: 1px solid var(--line); border-radius: 24px;
+        padding: 22px; margin: 24px 0; box-shadow: 0 20px 60px rgba(255,62,165,.18); }
+.stub .label { font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); }
+.stub .figure { font: 800 46px/1.1 ui-rounded, "SF Pro Rounded", -apple-system, sans-serif; font-variant-numeric: tabular-nums;
+                margin: 4px 0 12px; background: var(--neon); -webkit-background-clip: text; background-clip: text;
+                -webkit-text-fill-color: transparent; direction: ltr; text-align: start; }
+.stub .row { display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); padding: 10px 0 0; margin-top: 10px; font-size: 15px; }
+.stub .row span:last-child { font-variant-numeric: tabular-nums; white-space: nowrap; color: #fff; direction: ltr; }
+.tag { display: inline-block; background: var(--neon); color: #fff; font-weight: 700; font-size: 13px; padding: 4px 11px; border-radius: 999px; }
+.langs { font-size: 14px; margin-top: 10px; line-height: 2; }
+.langs a { margin-inline-end: 12px; white-space: nowrap; }
+small, footer { color: var(--muted); font-size: 14px; }
+footer { border-top: 1px solid var(--line); padding: 22px 0 40px; margin-top: 40px; }
+a { color: var(--magenta); }
+a:hover { color: var(--orange); }
+</style>
+</head>
+<body>
+<header><div class="wrap bar"><span class="brand"><img src="../icon.png" alt="">Eightlap</span><a href="../id/" aria-current="page">Eightlap</a><a href="../id/privacy/">Privasi</a><a href="../id/terms/">Ketentuan</a><a href="../id/support/">Dukungan</a></div></header>
+<main><div class="wrap">
+
+<h1>Rencanakan balapan. Kuasai jam.</h1>
+<p class="lede">Eightlap merencanakan lomba yang terdiri dari delapan lari 1 km dan delapan stasiun. Ia mengubah waktu finis yang kamu inginkan menjadi setiap putaran, setiap stasiun, dan setiap transisi, hingga ke detik, lalu menyimpan catatan waktumu agar kamu melihat di mana menit berikutnya bersembunyi.</p>
+
+<div class="stub">
+  <div class="label">Target</div>
+  <div class="figure">1:25:00</div>
+  <div class="row"><span>Lari 1 km</span><span>5:25</span></div><div class="row"><span>SkiErg</span><span>4:17</span></div><div class="row"><span>Lari 1 km</span><span>5:39</span></div><div class="row"><span>Sled Push</span><span>2:48</span></div><div class="row"><span>Lari 1 km</span><span>5:52</span></div>
+</div>
+
+<h2>Apa yang dilakukannya</h2>
+<ul><li><strong>Merencanakan hingga ke detik.</strong> Pilih tunggal, ganda, atau estafet beserta divisinya, tentukan waktu yang kamu mau, lalu dapatkan delapan kilometer, delapan stasiun, dan transisi di antaranya. Jumlahnya selalu sama dengan targetmu.</li><li><strong>Tahu di mana kelemahanmu.</strong> Geser penggeser di sled atau wall ball, dan rencana mengambil waktu dari tempat lain sehingga totalnya tetap.</li><li><strong>Mencatat seperti stopwatch.</strong> Ketik waktu untuk satu kilometer, satu stasiun, atau satu putaran penuh. Rekor pribadi terkumpul dengan sendirinya.</li><li><strong>Memperkirakan jika lomba hari ini.</strong> Waktu finis dari hasilmu sendiri, dan tiga tempat untuk menemukan menit berikutnya.</li><li><strong>Mengikuti buku peraturan.</strong> Jarak dan beban setiap divisi mengikuti buku peraturan resmi 2026/27.</li></ul>
+
+<h2>Apa yang tidak dilakukannya</h2>
+<div class="card"><p>Eightlap tidak punya akun, tidak menjual pelatihan atau program latihan, dan tidak memakai HealthKit. Ini adalah aplikasi independen, tidak berafiliasi dengan, tidak didukung, dan tidak disponsori oleh HYROX; nama itu adalah merek dagang pemiliknya.</p></div>
+
+<h2>Gratis dan Pro</h2>
+<p>Versi gratis mencakup satu rencana balapan, sepuluh catatan terbaru, rekor pribadi, dan hitung mundur. <span class="tag">Pro · bayar sekali</span> membuka rencana dan riwayat catatan tanpa batas, perkiraan, dan ekspor CSV. Tanpa langganan.</p>
+
+</div></main>
+<footer><div class="wrap">
+<p>Eightlap · <a href="mailto:mrzhownir1994@gmail.com">mrzhownir1994@gmail.com</a><br>Terakhir diperbarui: 2026-10-18</p>
+<p class="langs"><a href="../">English</a> <a href="../de/">Deutsch</a> <a href="../es/">Español</a> <a href="../fr/">Français</a> <a href="../it/">Italiano</a> <a href="../ja/">日本語</a> <a href="../ko/">한국어</a> <a href="../nl/">Nederlands</a> <a href="../pl/">Polski</a> <a href="../pt-BR/">Português</a> <a href="../ru/">Русский</a> <a href="../zh-Hans/">简体中文</a> <a href="../zh-Hant/">繁體中文</a> <a href="../tr/">Türkçe</a> <a href="../uk/">Українська</a> <a href="../ar/">العربية</a> <a href="../th/">ไทย</a> <a href="../vi/">Tiếng Việt</a> <a href="../sv/">Svenska</a></p>
+</div></footer>
+</body>
+</html>
